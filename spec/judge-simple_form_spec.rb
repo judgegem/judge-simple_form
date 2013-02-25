@@ -5,7 +5,7 @@ describe Judge::SimpleForm do
     ActionView::Base.new(nil, {}, UsersController.new)
   end
   let(:builder) do
-    SimpleForm::FormBuilder.new(:user, FactoryGirl.build(:user), template, {}, nil)
+    SimpleForm::FormBuilder.new(:user, User.new, template, {}, nil)
   end
   let(:expected) do
     /data\-validate\=\"\[.+\]\"/
