@@ -8,7 +8,7 @@ This is an adapter gem which allows you to use [Judge](http://judge.joecorcoran.
 
 Do this in your Gemfile:
 
-    gem "judge-simple_form", "~> x.x.x", :require => "judge/simple_form"
+    gem 'judge-simple_form'
 
 Then add <code>:validate => true</code> to the input options in your views. That's all.
 
