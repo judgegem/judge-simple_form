@@ -15,6 +15,11 @@ describe Judge::SimpleForm do
     builder.input(:name, :validate => true).should match expected
   end
 
+  it "preserves other attributes" do
+    builder.input(:name, :placeholder => 'foobar', :validate => true).should match expected
+    builder.input(:name, :placeholder => 'foobar', :validate => true).should match 'placeholder'
+  end
+
   it "does not add data attribute otherwise" do
     builder.input(:name).should_not match expected
   end
