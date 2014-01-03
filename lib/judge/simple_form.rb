@@ -3,22 +3,28 @@ require 'simple_form' unless defined?(::SimpleForm)
 
 module Judge
   module SimpleForm
-    module Inputs
+    module FormBuilder
 
       include Judge::Html
 
       def self.included(base)
-        base.send(:alias_method, :old_input_html_options, :input_html_options)
-        base.send(:alias_method, :input_html_options, :new_input_html_options)
+        base.class_eval do
+          alias_method_chain :input, :judge_validations
+        end
       end
 
-      def new_input_html_options
-        attrs = options[:validate].present? ? attrs_for(object, attribute_name) : {}
-        attrs.merge(old_input_html_options)
+      def input_with_judge_validations(attribute_name, options = {}, &block)
+        if options.key?(:validate)
+          options[:input_html] ||= {}
+          options[:input_html].merge!(attrs_for(object, attribute_name))
+          options.delete(:validate)
+        end
+
+        input_without_judge_validations(attribute_name, options, &block)
       end
 
     end
   end
 end
 
-::SimpleForm::Inputs::Base.send(:include, ::Judge::SimpleForm::Inputs)
+SimpleForm::FormBuilder.send(:include, Judge::SimpleForm::FormBuilder)
