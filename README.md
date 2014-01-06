@@ -8,13 +8,25 @@ This is an adapter gem which allows you to use [Judge](http://judge.joecorcoran.
 
 Do this in your Gemfile:
 
-    gem 'judge-simple_form'
+```ruby
+gem 'judge-simple_form'
+```
+
+Remember to setup Judge in your SimpleForm initializer:
+
+```ruby
+config.wrappers do |b|
+  b.use :judge
+end
+```
 
 Then add <code>:validate => true</code> to the input options in your views. That's all.
 
-    <%= simple_form_for(@user) do |f| %>
-      <%= f.input :name, :validate => true %>
-    <% end %>
+```erb
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :name, :validate => true %>
+<% end %>
+```
 
 ## Judge
 
