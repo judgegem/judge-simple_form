@@ -1,6 +1,11 @@
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+#!/usr/bin/env rake
 
-RSpec::Core::RakeTask.new("spec")
+require 'bundler/setup'
+require 'bundler/gem_tasks'
+
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new('spec')
+
+require 'appraisal'
 
 task :default => [:spec]

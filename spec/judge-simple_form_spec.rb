@@ -1,21 +1,39 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe Judge::SimpleForm do
+  before do
+    SimpleForm.setup do |config|
+      config.wrappers do |b|
+        b.use :placeholder
+        b.use :judge
+      end
+    end
+  end
+
   let(:template) do
     ActionView::Base.new(nil, {}, UsersController.new)
   end
   let(:builder) do
     SimpleForm::FormBuilder.new(:user, User.new, template, {}, nil)
   end
-  let(:expected) do
-    /data\-validate\=\"\[.+\]\"/
+
+  it 'adds data attribute when :validate option is true' do
+    output = builder.input(:name, :validate => true)
+    expect(output).to have_attributes('data-validate')
   end
 
-  it "adds data attribute when :validate option is true" do
-    builder.input(:name, :validate => true).should match expected
+  it 'preserves other attributes' do
+    output = builder.input(:name, :placeholder => 'foobar', :validate => true)
+    expect(output).to have_attributes('data-validate', 'placeholder')
   end
 
-  it "does not add data attribute otherwise" do
-    builder.input(:name).should_not match expected
+  it 'preserves attributes from input_html' do
+    output = builder.input(:name, :input_html => { 'foo' => 'bar' }, :validate => true)
+    expect(output).to have_attributes('data-validate', 'foo')
+  end
+
+  it 'does not add data attribute otherwise' do
+    output = builder.input(:name)
+    expect(output).not_to have_attributes('data-validate')
   end
 end

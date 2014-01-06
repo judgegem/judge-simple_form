@@ -1,13 +1,11 @@
 language: ruby
+
 rvm:
-  - 1.9.2
   - 1.9.3
-script: bundle exec rake
+  - 2.0.0
 
-notifications:
-  recipients:
-    - joe@tribesports.com
+script: "bundle exec rake"
 
-branches:
-  only:
-    - master
+gemfiles:
+  - "gemfiles/simple_form_2.gemfile"
+  - "gemfiles/simple_form_3.gemfile"

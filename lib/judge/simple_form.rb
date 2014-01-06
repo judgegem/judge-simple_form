@@ -1,24 +1,24 @@
 require 'judge' unless defined?(::Judge::VERSION)
 require 'simple_form' unless defined?(::SimpleForm)
 
-module Judge
-  module SimpleForm
-    module Inputs
-
-      include Judge::Html
-
-      def self.included(base)
-        base.send(:alias_method, :old_input_html_options, :input_html_options)
-        base.send(:alias_method, :input_html_options, :new_input_html_options)
+module SimpleForm
+  module Components
+    module Judge
+      include ::Judge::Html
+      
+      def judge
+        if has_judge?
+          input_html_options.deep_merge!(attrs_for(object, attribute_name))
+        end
+        input
       end
 
-      def new_input_html_options
-        attrs = options[:validate].present? ? attrs_for(object, attribute_name) : {}
-        attrs.merge(old_input_html_options)
+      def has_judge?
+        options[:validate] == true
       end
 
     end
   end
 end
 
-::SimpleForm::Inputs::Base.send(:include, ::Judge::SimpleForm::Inputs)
+::SimpleForm::Inputs::Base.send(:include, ::SimpleForm::Components::Judge)

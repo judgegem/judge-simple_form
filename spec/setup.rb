@@ -18,3 +18,5 @@ end
 
 class UsersController < ActionController::Base
 end
+
+I18n.enforce_available_locales = false
