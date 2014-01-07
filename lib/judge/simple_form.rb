@@ -5,12 +5,12 @@ module SimpleForm
   module Components
     module Judge
       include ::Judge::Html
-      
+
       def judge
         if has_judge?
           input_html_options.deep_merge!(attrs_for(object, attribute_name))
         end
-        input
+        nil
       end
 
       def has_judge?
