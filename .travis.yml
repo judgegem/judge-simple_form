@@ -6,6 +6,6 @@ rvm:
 
 script: "bundle exec rake"
 
-gemfiles:
+gemfile:
   - "gemfiles/simple_form_2.gemfile"
   - "gemfiles/simple_form_3.gemfile"
