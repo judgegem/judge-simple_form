@@ -1,7 +1,7 @@
 PATH
   remote: /Users/joecorcoran/Projects/judge-simple_form
   specs:
-    judge-simple_form (0.3.0)
+    judge-simple_form (0.4.0)
       judge (~> 2.0)
       simple_form (>= 2.0)
 
@@ -110,5 +110,5 @@ DEPENDENCIES
   nokogiri (~> 1.6)
   rake
   rspec (~> 2.13)
-  simple_form (~> 3.0)
+  simple_form (= 3.0.1)
   sqlite3 (~> 1.3)
