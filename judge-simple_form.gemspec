@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_runtime_dependency 'judge',       '~> 2.0'
-  s.add_runtime_dependency 'simple_form', '>= 3.1.0.rc1'
+  s.add_runtime_dependency 'simple_form', '>= 2.0'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'sqlite3',   '~> 1.3'

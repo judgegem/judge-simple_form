@@ -6,9 +6,9 @@ module SimpleForm
     module Judge
       include ::Judge::Html
 
-      def judge(wrapper_options)
+      def judge(wrapper_options = nil)
         if has_judge?
-          merge_wrapper_options(input_html_options.deep_merge!(attrs_for(object, attribute_name)), wrapper_options)
+          input_html_options.deep_merge!(attrs_for(object, attribute_name))
         end
         nil
       end
