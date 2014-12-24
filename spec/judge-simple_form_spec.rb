@@ -15,7 +15,7 @@ describe Judge::SimpleForm do
     ActionView::Base.new(nil, {}, UsersController.new)
   end
   let(:builder) do
-    SimpleForm::FormBuilder.new(:user, User.new, template, {}, nil)
+    SimpleForm::FormBuilder.new(:user, User.new, template, {})
   end
 
   it 'adds data attribute when :validate option is true' do
