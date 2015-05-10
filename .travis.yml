@@ -1,11 +1,12 @@
 language: ruby
 
 rvm:
-  - 1.9.3
   - 2.0.0
+  - 2.1.0
+  - 2.2.0
 
 script: "bundle exec rake"
 
 gemfile:
-  - "gemfiles/simple_form_2.gemfile"
-  - "gemfiles/simple_form_3.gemfile"
+  - "gemfiles/simple_form_3_0.gemfile"
+  - "gemfiles/simple_form_3_1.gemfile"

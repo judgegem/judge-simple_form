@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3',   '~> 1.3'
   s.add_development_dependency 'rspec',     '~> 2.13'
   s.add_development_dependency 'nokogiri',  '~> 1.6'
-  s.add_development_dependency 'appraisal', '~> 0.5'
+  s.add_development_dependency 'appraisal', '~> 2.0.0'
 end

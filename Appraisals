@@ -1,7 +1,7 @@
-appraise 'simple_form_2' do
-  gem 'simple_form', '~> 2.1'
+appraise 'simple_form_3_0' do
+  gem 'simple_form', '~> 3.0'
 end
 
-appraise 'simple_form_3' do
-  gem 'simple_form', '~> 3.0'
+appraise 'simple_form_3_1' do
+  gem 'simple_form', '~> 3.1'
 end
