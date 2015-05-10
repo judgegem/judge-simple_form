@@ -12,7 +12,7 @@ Do this in your Gemfile:
 gem 'judge-simple_form'
 ```
 
-Remember to setup Judge in your SimpleForm initializer:
+Remember to setup Judge in your SimpleForm initializer. Put `b.use :judge` above `b.use :input` or `b.use :input_label`:
 
 ```ruby
 config.wrappers do |b|
