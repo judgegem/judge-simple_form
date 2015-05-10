@@ -2,7 +2,9 @@
 
 [![Build status](https://secure.travis-ci.org/joecorcoran/judge-simple_form.png?branch=master)](http://travis-ci.org/joecorcoran/judge-simple_form)
 
-This is an adapter gem which allows you to use [Judge][judge] from within your [SimpleForm](http://github.com/plataformatec/simple_form) forms.
+This is an adapter gem which allows you to use [Judge][judge] from within your [Simple Form](http://github.com/plataformatec/simple_form) forms.
+
+The current version supports Simple Form >= 3. For Simple Form 2 support use `'judge-simple_form', ~> '0.4'`.
 
 ## Usage
 
