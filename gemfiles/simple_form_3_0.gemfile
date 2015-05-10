@@ -4,4 +4,4 @@ source "http://rubygems.org"
 
 gem "simple_form", "~> 3.0"
 
-gemspec :path=>"../"
+gemspec :path => "../"
