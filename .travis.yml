@@ -1,9 +1,7 @@
 language: ruby
 
 rvm:
-  - 2.0.0
-  - 2.1.0
-  - 2.2.0
+  - 2.2
 
 before_install:
   - "gem install bundler"
@@ -13,3 +11,4 @@ script: "bundle exec rake"
 gemfile:
   - "gemfiles/simple_form_3_0.gemfile"
   - "gemfiles/simple_form_3_1.gemfile"
+  - "gemfiles/simple_form_3_2.gemfile"
