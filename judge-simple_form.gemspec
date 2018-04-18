@@ -14,12 +14,12 @@ Gem::Specification.new do |s|
   s.files         = Dir['lib/**/*'] + ['LICENSE.txt', 'README.md']
   s.require_paths = ['lib']
 
-  s.add_runtime_dependency 'judge',       '~> 2.0'
+  s.add_runtime_dependency 'judge',       '>= 2.0'
   s.add_runtime_dependency 'simple_form', '>= 3.0'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'sqlite3',   '~> 1.3.11'
-  s.add_development_dependency 'rspec',     '~> 2.13'
+  s.add_development_dependency 'rspec',     '~> 3.5'
   s.add_development_dependency 'nokogiri',  '~> 1.6'
   s.add_development_dependency 'appraisal', '~> 2.0.0'
 end

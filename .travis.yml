@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
-  - 2.2
+  - 2.5
 
 before_install:
   - "gem install bundler"
@@ -12,3 +12,4 @@ gemfile:
   - "gemfiles/simple_form_3_0.gemfile"
   - "gemfiles/simple_form_3_1.gemfile"
   - "gemfiles/simple_form_3_2.gemfile"
+  - "gemfiles/simple_form_4_0.gemfile"
