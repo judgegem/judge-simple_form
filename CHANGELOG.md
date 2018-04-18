@@ -1,5 +1,8 @@
 # Changelog
 
+* **1.1.0**
+  - adds judge v3 support
+  - adds simple_form v4 support
 * **1.0**
   - *DEPRECATED* simple_form 2 support
   - adds simple_form 3.1 support
