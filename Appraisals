@@ -9,3 +9,7 @@ end
 appraise 'simple_form_3_2' do
   gem 'simple_form', '~> 3.2'
 end
+
+appraise 'simple_form_4_0' do
+  gem 'simple_form', '~> 4.0'
+end
